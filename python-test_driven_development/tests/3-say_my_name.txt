@@ -1,0 +1,101 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Test 1: Avec prénom et nom
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test 2: Avec seulement le prénom
+>>> say_my_name("Bob")
+My name is Bob 
+
+# Test 3: Avec un nom composé
+>>> say_my_name("Jean-Pierre", "Dupont")
+My name is Jean-Pierre Dupont
+
+# Test 4: Avec des espaces dans le nom
+>>> say_my_name("Walter", "White Jr")
+My name is Walter White Jr
+
+# Test 5: Prénom vide autorisé (c'est une string)
+>>> say_my_name("", "Smith")
+My name is  Smith
+
+# Test 6: Les deux vides
+>>> say_my_name("", "")
+My name is  
+
+# Test 7: Erreur - first_name n'est pas une string (int)
+>>> say_my_name(12, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test 8: Erreur - first_name est None
+>>> say_my_name(None, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test 9: Erreur - last_name n'est pas une string (int)
+>>> say_my_name("John", 42)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+# Test 10: Erreur - last_name est None
+>>> say_my_name("John", None)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+# Test 11: Erreur - first_name est une liste
+>>> say_my_name(["John"], "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test 12: Erreur - les deux ne sont pas des strings
+>>> say_my_name(12, 42)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test 13: Erreur - first_name est un float
+>>> say_my_name(3.14, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test 14: Erreur - last_name est un float
+>>> say_my_name("John", 3.14)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+# Test 15: Nom très long
+>>> say_my_name("Abcdefghijklmnopqrstuvwxyz", "Zyxwvutsrqponmlkjihgfedcba")
+My name is Abcdefghijklmnopqrstuvwxyz Zyxwvutsrqponmlkjihgfedcba
+
+# Test 16: Avec des caractères spéciaux
+>>> say_my_name("François", "O'Neil")
+My name is François O'Neil
+
+# Test 17: Erreur - aucun argument
+>>> say_my_name()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+# Test 18: Erreur - first_name est un dictionnaire
+>>> say_my_name({"name": "John"}, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test 19: Avec des chiffres dans le string (valide)
+>>> say_my_name("John123", "Smith456")
+My name is John123 Smith456
+
+# Test 20: Avec des espaces multiples
+>>> say_my_name("John   Paul", "Smith")
+My name is John   Paul Smith
