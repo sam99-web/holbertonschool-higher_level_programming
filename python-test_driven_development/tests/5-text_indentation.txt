@@ -1,0 +1,98 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test 1: Texte simple avec un point
+>>> text_indentation("Hello.")
+Hello.
+<BLANKLINE>
+
+# Test 2: Texte avec point d'interrogation
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
+
+# Test 3: Texte avec deux-points
+>>> text_indentation("Hello:")
+Hello:
+<BLANKLINE>
+
+# Test 4: Texte avec plusieurs phrases
+>>> text_indentation("Hello. How are you? I am fine.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I am fine.
+<BLANKLINE>
+
+# Test 5: Texte avec espaces après les caractères spéciaux (doivent être supprimés)
+>>> text_indentation("Hello.   How are you?    I am fine.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I am fine.
+<BLANKLINE>
+
+# Test 6: Texte avec deux-points
+>>> text_indentation("Python: A programming language.")
+Python:
+<BLANKLINE>
+A programming language.
+<BLANKLINE>
+
+# Test 7: Texte sans caractères spéciaux
+>>> text_indentation("Hello World")
+Hello World
+
+# Test 8: String vide
+>>> text_indentation("")
+
+# Test 9: Texte avec espaces au début (conservés car pas après caractère spécial)
+>>> text_indentation("  Hello.")
+  Hello.
+<BLANKLINE>
+
+# Test 10: Erreur - text est un nombre
+>>> text_indentation(42)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Test 11: Erreur - text est None
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Test 12: Erreur - text est une liste
+>>> text_indentation(["Hello"])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Test 13: Texte long avec plusieurs caractères spéciaux
+>>> text_indentation("What is Python? Python is great. Why: Because it is easy.")
+What is Python?
+<BLANKLINE>
+Python is great.
+<BLANKLINE>
+Why:
+<BLANKLINE>
+Because it is easy.
+<BLANKLINE>
+
+# Test 14: Caractères spéciaux consécutifs
+>>> text_indentation("Hello.?:")
+Hello.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+# Test 15: Texte avec seulement un point
+>>> text_indentation(".")
+.
+<BLANKLINE>
+
+# Test 16: Texte avec espace
