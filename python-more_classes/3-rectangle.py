@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 class Rectangle:
-    """Rectangle class with width, height, area, perimeter, and printing."""
-
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -44,6 +42,4 @@ class Rectangle:
         return "\n".join(["#" * self.width for _ in range(self.height)])
 
     def __repr__(self):
-        """Return a string representation able to recreate a new instance."""
         return f"Rectangle({self.width}, {self.height})"
-
