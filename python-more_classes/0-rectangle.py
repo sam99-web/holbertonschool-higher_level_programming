@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 class Rectangle:
     pass
-p = Rectangle()
+r = Rectangle()
 print(r)
