@@ -1,8 +1,18 @@
 #!/usr/bin/python3
-""" this module defines a square by: (based on 0-square.py)"""
+"""
+This module defines a Square class.
+"""
 
 class Square:
-    """the contructeur"""
+    """
+    This class defines a square with a private size attribute.
+    """
+
     def __init__(self, size):
-        self.size = size
+        """
+        Initialize a new Square instance.
+
+        Args:
+            size: The size of the square (no type or value verification).
+        """
         self.__size = size
