@@ -25,6 +25,7 @@ Authentification : Vérifie que vous communiquez avec le bon serveur
 
 2. Structure des Requêtes et Réponses HTTP
 Structure d'une Requête HTTP
+https://docs.google.com/document/d/1-Ri8CI7oHikPxLwdrCAjdPECeIQwsc23j-GFSVAG9Dw/edit?tab=t.0
 ┌─────────────────────────────────────────────────────────────────┐
 │                     REQUÊTE HTTP                                │
 ├─────────────────────────────────────────────────────────────────┤
