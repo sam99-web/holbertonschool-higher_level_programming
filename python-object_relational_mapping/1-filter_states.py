@@ -1,43 +1,40 @@
 #!/usr/bin/python3
 """
-Module that lists all states from a MySQL database.
+1-filter_states.py
+List all states with a name starting with N,
+from the database hbtn_0e_0_usa
 """
-
-import MySQLdb
 import sys
-
-
-def list_states(username, password, database):
-    """
-    Connects to the MySQL database and prints all states ordered by id.
-    """
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database
-    )
-
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
-    rows = cursor.fetchall()
-
-    for row in rows:
-        print(row)
-
-    cursor.close()
-    db.close()
+import MySQLdb
 
 
 if __name__ == "__main__":
     """
-    Gets arguments and calls the function.
+    Main function that executes the database connection,
+    and retrieval of states.
     """
+
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
-    list_states(username, password, database)
+    db = MySQLdb.connect(
+        host="localhost",
+        user=username,
+        passwd=password,
+        db=database,
+        port=3306
+    )
+
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    states = cursor.fetchall()
+
+    for state in states:
+        if state[1][0] == 'N':
+            print(state)
+
+    cursor.close()
+    db.close()
 
